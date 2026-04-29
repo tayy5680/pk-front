@@ -1,0 +1,50 @@
+{
+  "name": "Cofun LIVE",
+  "private": true,
+  "version": "qa0.0.55",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+	"build:dev": "vite build --mode dev",
+    "build:qa": "vite build --mode qa",
+    "build:prod": "vite build --mode prod",
+    "preview": "vite preview",
+    "xlsx": "node scripts/xlsx.js"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "@videojs/http-streaming": "^3.13.2",
+    "agora-rtc-sdk-ng": "^4.23.1",
+    "axios": "^1.7.7",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "dayjs": "^1.11.13",
+    "element-plus": "^2.7.5",
+    "flv.js": "^1.6.2",
+    "i18n-iso-countries": "^7.13.0",
+    "patch-package": "^8.0.0",
+    "pinia": "^2.1.7",
+    "postinstall-postinstall": "^2.1.0",
+    "swiper": "^10.3.1",
+    "video.js": "^8.17.3",
+    "vue-i18n": "^10.0.4",
+    "vue-router": "^4.3.3",
+    "vue-tel-input": "^9.3.0",
+    "vue3-carousel": "^0.3.4",
+    "xlsx": "^0.18.5",
+    "yyeva": "^1.1.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.4",
+    "eslint": "^8.57.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.2.0",
+    "eslint-plugin-vue": "^9.26.0",
+    "prettier": "3.3.2",
+    "sass": "^1.77.5",
+    "vite": "^6.2.2"
+  }
+}
