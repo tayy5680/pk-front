@@ -1,0 +1,232 @@
+:root {
+  --primary-color: #24695c;
+  --main-red: #ff2d55;
+  --border-color: #3a4359;
+  --main-dark: #242a37;
+  --main-dark-text: #5a6b8d;
+  // 遊戲本體比例寬度
+  --game-width: 46.18svh;
+}
+
+// 按鈕
+.el-button.opacity-red-btn {
+  background-color: #8084bb4d;
+  color: white;
+  border-color: var(--main-red);
+  transition: 0.2s all ease;
+
+  &:hover {
+    background-color: var(--main-red);
+    color: white;
+    border-color: var(--main-red);
+  }
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.32);
+  }
+}
+
+// drawer
+.el-drawer.darkDrawer {
+  --main-title-height: 48px;
+
+  background-color: #263045;
+  border-radius: 15px;
+
+  .el-drawer__body {
+    overflow: hidden;
+    padding: 0;
+
+    .main-menu {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 12px 15px;
+
+      .sticky-top {
+        width: 100%;
+        padding: 5px 0 10px 0;
+        background-color: #1e2636;
+        text-align: center;
+        font-size: 1.1em;
+
+        > span {
+          font-size: 0.9em;
+        }
+      }
+
+      .list {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: 0.2s all ease;
+        position: relative;
+        overflow-y: scroll;
+        scrollbar-width: none;
+
+        .list-item {
+          display: flex;
+          align-items: center;
+          border-radius: 10px;
+          cursor: pointer;
+          background-color: #38435c;
+          padding: 8px 20px;
+          margin: 5px 0;
+          transition: background-color 0.2s ease;
+
+          i,
+          .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            line-height: 20px;
+          }
+
+          &:hover {
+            background-color: #5a6b8d;
+          }
+        }
+      }
+    }
+    .main-title {
+      text-align: center;
+      padding: 12px 0;
+      background-color: #1d2636;
+      position: fixed;
+      width: 100%;
+      height: var(--main-title-height);
+      border-radius: 15px 15px 0 0;
+      .back {
+        padding: 0;
+        margin: 0 0 0 5px;
+        font-size: 20px;
+        line-height: 20px;
+        text-align: right;
+        width: 30px;
+        color: #5a6b8d;
+        position: absolute;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+// loading
+.spin-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  background-color: #000000;
+  color: white;
+  position: absolute;
+  width: 100%;
+
+  i::before {
+    animation: spin 1s linear infinite;
+    /* 定義 keyframes 動畫 */
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
+
+// input輸入框 : 文字大小小於16px的話畫面會被放大
+.el-input {
+  .el-input__inner {
+    font-size: 16px;
+  }
+}
+// el-message-box
+.el-overlay-message-box .el-message-box {
+  background-color: #293550;
+  border: 1px solid #98a6c6;
+  border-radius: 10px;
+  padding: 20px;
+
+  .el-message-box__container {
+    color: white;
+    font-size: 16px;
+    justify-content: center;
+    padding: 30px 0;
+  }
+  .el-message-box__title {
+    color: #6a7a9d;
+    span::before {
+      content: '!';
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 20px; /* 圓的直徑 */
+      height: 20px;
+      background-color: #6a7a9d; /* 圓形背景色 */
+      color: #293550; /* 文字顏色 */
+      border-radius: 50%; /* 圓形效果 */
+      font-weight: bold; /* 讓驚嘆號更醒目 */
+      margin-right: 8px; /* 與文字的間距 */
+      border: 1px solid #6a7a9d; /* 選擇性：加邊框 */
+    }
+  }
+
+  .el-message-box__btns {
+    justify-content: center;
+    button {
+      transition: 0.2s all ease;
+      background-color: var(--main-red);
+      color: white;
+      border-color: var(--main-red);
+      opacity: 0.8;
+      min-width: 80px;
+
+      &:hover {
+        opacity: 1;
+      }
+      &:focus-visible {
+        outline: 2px solid rgba(255, 255, 255, 0.32);
+      }
+    }
+
+    .cancel-btn {
+      background-color: #6a7a9d;
+      border: 0;
+    }
+  }
+}
+
+// 背景色的下拉選單
+.popper-black-select {
+  margin: -16px 1px 0 -1px;
+  background-color: #1f2530 !important;
+  border: 1px solid #8094bb !important;
+  color: white;
+  border-top: 0 !important;
+  border-radius: 0 0 5px 5px !important;
+  overflow-x: hidden;
+
+  .el-select-dropdown {
+    border: 0 !important;
+    margin-top: 1px;
+
+    .el-select-dropdown__item {
+      color: white;
+      padding: 0 20px;
+
+      &.is-hovering {
+        background-color: #3a4359;
+      }
+
+      &.is-selected {
+        color: var(--main-red);
+      }
+    }
+  }
+  .el-popper__arrow:before {
+    display: none;
+  }
+}
